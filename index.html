@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Character Pose Mimic</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- MediaPipe Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+
+    <!-- Three.js Dependency -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>AI Pose Sync</h1>
+        <p>Real-time full-body tracking and 3D character mimicking</p>
+    </div>
+    <div class="container">
+        <!-- Left Panel: Camera & 2D Skeleton -->
+        <div class="panel left-panel">
+            <div class="view-title">Camera Tracker</div>
+            <div class="video-container">
+                <video id="input_video" class="input_video" autoplay playsinline></video>
+                <canvas id="output_canvas" class="output_canvas"></canvas>
+            </div>
+            <div class="loader" id="loader">Loading AI Model...</div>
+        </div>
+        
+        <!-- Right Panel: 3D Character -->
+        <div class="panel right-panel">
+            <div class="view-title">3D Character</div>
+            <div id="threejs_container" class="threejs-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
